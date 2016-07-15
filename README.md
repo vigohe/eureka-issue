@@ -6,3 +6,6 @@ Docker image [https://hub.docker.com/r/vigohe/eureka/](https://hub.docker.com/r/
 
 `docker run --rm --name eureka -p 8761:8761 vigohe/eureka`
 
+To generate the image from the source just run:
+
+`mvn clean package docker:build`

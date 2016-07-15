@@ -1,0 +1,25 @@
+---
+server:
+  port: ${PORT:8761}
+
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: 150.10.15.105
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+---
+spring:
+  profiles: qa
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+          defaultZone: http://${eureka-ha.uri}:${eureka-ha.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+---
